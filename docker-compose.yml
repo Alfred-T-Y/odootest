@@ -1,0 +1,50 @@
+services:
+
+  db:
+    image: postgres:14
+    restart: unless-stopped
+    container_name: odoodb
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=odoodb
+    expose:
+      - "5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d odoodb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build: .
+    restart: unless-stopped
+    container_name: web_odoo
+    depends_on:
+      db:
+        condition: service_healthy
+    expose:
+      - "8069"
+      - "8072"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+      - ./logs:/var/log/odoo
+      
+  nginx:
+    build: 
+      context: nginx     
+      dockerfile: Dockerfile 
+    container_name: odoonginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+
+volumes:
+  pgdata:
+  odoo-web-data:
