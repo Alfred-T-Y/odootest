@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
+
     <menuitem
-        id="memu_hospital_root"
+        id="menu_hospital_root"
         name="Hospital_Menu"/>
+
+    <menuitem
+        id="hms_interface"
+        name="HMS interface"
+        parent="menu_hospital_root"/>
+
+    <menuitem
+        id="hms_patient"
+        name="HMS patients"
+        parent="hms_interface"
+        action="action_hms_patients"/>
     
 </odoo>

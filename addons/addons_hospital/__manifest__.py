@@ -4,6 +4,8 @@
     "license": "LGPL-3",
     "version": "19.0.1.0.1",
     "data": [
-        "views/menu.xml"
+        "security/ir.model.access.csv",
+        "views/patients_views.xml",
+        "views/menu.xml",
     ]
 }
