@@ -2,6 +2,46 @@
 
 <odoo>
 
+    <record id="hms_patient_tree" model="ir.ui.view">
+        <field name="name">hospital.patient.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <list string="Patients hms">
+                <field name="name"/>
+                <field name="date_of_birth" optional="show"/>
+                <field name="gender" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hms_patient_form" model="ir.ui.view">
+        <field name="name">hospital.patient.form</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="Patients hms">
+                <sheet>
+                    <div class="row">
+                        <div class="col-6">
+                            <group>
+                                <field name="name"/>
+                                <field name="date_of_birth"/>
+                            </group>
+                        </div>
+                        <div class="col-6">
+                            <group>
+                                <field name="gender"/>
+                            </group>
+                        </div>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" group="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
     <record id="action_hms_patients" model="ir.actions.act_window">
         <field name="name">Patients</field>
         <field name="res_model">hospital.patient</field>
