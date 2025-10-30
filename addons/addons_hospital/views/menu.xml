@@ -15,6 +15,14 @@
         id="hms_patient"
         name="HMS patients"
         parent="hms_interface"
+        sequence="10"
         action="action_hms_patients"/>
+
+    <menuitem
+        id="hms_patient_readonly"
+        name="HMS patients readonly"
+        parent="hms_interface"
+        sequence="20"
+        action="action_hms_patients_readonly"/>
     
 </odoo>
