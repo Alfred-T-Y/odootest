@@ -24,5 +24,11 @@
         parent="hms_interface"
         sequence="20"
         action="action_hms_patients_readonly"/>
+
+    <menuitem
+        id="menu_appointments"
+        name="Appointments"
+        parent="menu_hospital_root"
+        action="action_hms_appointments"/>
     
 </odoo>

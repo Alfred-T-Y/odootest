@@ -10,6 +10,7 @@
         "security/ir.model.access.csv",
         "views/patients_views.xml",
         "views/patients_views_readonly.xml",
+        "views/appointments_views.xml",
         "views/menu.xml",
     ]
 }
