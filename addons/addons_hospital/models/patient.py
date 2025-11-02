@@ -10,3 +10,4 @@ class HospitalPatient(models.Model):
     date_of_birth = fields.Date(string="D_O_B", tracking=True)
     gender = fields.Selection([('male','Male'),('female','Female')], 
                               string="Gender", tracking=True)
+    
