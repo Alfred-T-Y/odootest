@@ -4,7 +4,8 @@
 
     <menuitem
         id="menu_hospital_root"
-        name="Hospital_Menu"/>
+        name="Hospital_Menu"
+        web_icon="addons_hospital,static/description/icon.png"/>
 
     <menuitem
         id="hms_interface"

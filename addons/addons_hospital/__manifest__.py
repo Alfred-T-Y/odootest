@@ -2,7 +2,8 @@
     "name": "Hospital management system",
     "author": "Alfred-T-Y",
     "license": "LGPL-3",
-    "version": "19.0.1.0.1",
+    "version": "16.0.1.0.1",
+    "images": ['static/description/icon.png'],
     "depends": [
         'mail'
     ],

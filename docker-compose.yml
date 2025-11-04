@@ -18,8 +18,8 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
-  web:
-    image: odoo:19
+  odooweb:
+    image: odoo:16
     container_name: web_odoo
     depends_on:
       db:
@@ -42,7 +42,7 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - web
+      - odooweb
 
 volumes:
   pgdata:

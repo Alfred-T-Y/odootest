@@ -2,15 +2,15 @@
 
 <odoo>
 
-    <record id="hms_patient_list" model="ir.ui.view">
-        <field name="name">hospital.patient.list</field>
+    <record id="hms_patient_tree" model="ir.ui.view">
+        <field name="name">hospital.patient.tree</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
-            <list string="Patients hms">
+            <tree string="Patients hms">
                 <field name="name"/>
                 <field name="date_of_birth" optional="show"/>
                 <field name="gender" optional="hide"/>
-            </list>
+            </tree>
         </field>
     </record>
 
@@ -48,10 +48,10 @@
     <record id="action_hms_patients" model="ir.actions.act_window">
         <field name="name">Patients</field>
         <field name="res_model">hospital.patient</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="view_ids" eval="[
             (5, 0, 0),
-            (0, 0, {'view_mode': 'list', 'view_id': ref('hms_patient_list')}),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('hms_patient_tree')}),
             (0, 0, {'view_mode': 'form', 'view_id': ref('hms_patient_form')})
         ]"/>
         <field name="help" type="html">
