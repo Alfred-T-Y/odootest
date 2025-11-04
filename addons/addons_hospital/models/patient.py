@@ -10,4 +10,5 @@ class HospitalPatient(models.Model):
     date_of_birth = fields.Date(string="D_O_B", tracking=True)
     gender = fields.Selection([('male','Male'),('female','Female')], 
                               string="Gender", tracking=True)
-    
+    tags_ids = fields.Many2many('patient.tag', 'patient_tag_rel',
+                                'patient_id','tag_id',string="Tags")

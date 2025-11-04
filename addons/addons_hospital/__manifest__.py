@@ -3,7 +3,6 @@
     "author": "Alfred-T-Y",
     "license": "LGPL-3",
     "version": "16.0.1.0.1",
-    "images": ['static/description/icon.png'],
     "depends": [
         'mail'
     ],
@@ -11,6 +10,7 @@
         "security/ir.model.access.csv",
         "data/sequence.xml",
         "views/patients_views.xml",
+        "views/patients_tag_views.xml",
         "views/patients_views_readonly.xml",
         "views/appointments_views.xml",
         "views/menu.xml",

@@ -31,5 +31,17 @@
         name="Appointments"
         parent="menu_hospital_root"
         action="action_hms_appointments"/>
+
+    <menuitem
+        id="hms_configuration"
+        name="Configuration"
+        sequence="100"
+        parent="menu_hospital_root"/>
+
+    <menuitem
+        id="menu_patient_tag"
+        name="Patient tag"
+        parent="hms_configuration"
+        action="action_patient_tag"/>
     
 </odoo>
