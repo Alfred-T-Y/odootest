@@ -27,9 +27,15 @@
         action="action_hms_patients_readonly"/>
 
     <menuitem
+        id="menu_hms_appointments"
+        name="Hms appointments"
+        parent="menu_hospital_root"/>
+
+    <menuitem
         id="menu_appointments"
         name="Appointments"
-        parent="menu_hospital_root"
+        parent="menu_hms_appointments"
+        sequence="10"
         action="action_hms_appointments"/>
 
     <menuitem
@@ -43,5 +49,12 @@
         name="Patient tag"
         parent="hms_configuration"
         action="action_patient_tag"/>
+
+     <menuitem
+        id="menu_appointments_line"
+        name="Appointments lines"
+        parent="menu_hms_appointments"
+        sequence="20"
+        action="action_hms_appointments_line"/>
     
 </odoo>

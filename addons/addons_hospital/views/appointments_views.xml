@@ -47,6 +47,12 @@
                                 </group>
                             </div>
                         </div>
+                        <field name="appointment_line_ids" class="mt-5">
+                            <tree editable="top">
+                                <field name="product_id"/>
+                                <field name="qty"/>
+                            </tree>
+                        </field>
                     </sheet>
                     <sheet class="mt-5">
                         <div class="chatter_container">
@@ -68,7 +74,7 @@
             (0, 0, {'view_mode': 'form', 'view_id': ref('menu_appointments_form')})
         ]"/>
         <field name="help" type="html">
-            <p>Create a new patient</p>
+            <p>Create a new appointment</p>
         </field>
     </record>
     
