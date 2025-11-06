@@ -6,6 +6,9 @@
     "depends": [
         'mail',
         'product',
+        'sale', 
+        'sale_management',
+        'report_xlsx',
     ],
     "data": [
         "security/ir.model.access.csv",
@@ -16,5 +19,7 @@
         "views/appointments_views.xml",
         "views/appointments_line_views.xml",
         "views/menu.xml",
+        "reports/appointment_report_pdf.xml",
+        "reports/report.xml"
     ]
 }

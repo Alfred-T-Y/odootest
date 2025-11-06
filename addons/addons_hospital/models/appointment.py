@@ -16,7 +16,7 @@ class HospitalAppointment(models.Model):
         ('done','Done'),('cancel','Cancelled')], default='draft', tracking=True)
     appointment_line_ids = fields.One2many(
         'hospital.appointment.line', 'appointment_id', string='Lines')
-
+    
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:

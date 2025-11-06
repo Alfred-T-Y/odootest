@@ -21,7 +21,7 @@
         <field name="arch" type="xml">
             <form string="Appointment hms">
                 <div>
-                    <header style="margin-left: 15px;">
+                    <header style="margin-left: 15px; margin-top: 10px">
                         <button name="action_confirm" type="object" string="Confirm" 
                         attrs="{'invisible': [('state', '!=', 'draft')]}" class="oe_highlight"/>
                         <button name="action_ongoing" type="object" string="Ongoing" 
@@ -30,6 +30,7 @@
                         attrs="{'invisible': [('state', '!=', 'ongoing')]}" class="oe_highlight"/>
                         <button name="action_cancel" type="object" string="Cancel" 
                         attrs="{'invisible': [('state', '=', 'done')]}"/>
+
                         <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,ongoing,done"/>
                     </header>
                     <sheet>

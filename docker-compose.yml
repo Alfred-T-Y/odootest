@@ -27,6 +27,10 @@ services:
     expose:
       - "8069"
       - "8072"
+    environment:
+      - USER=admin
+      - PASSWORD=admin
+      - HOST=db
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
@@ -36,7 +40,6 @@ services:
   nginx:
     build: 
       context: nginx     
-      dockerfile: Dockerfile 
     container_name: odoonginx
     restart: unless-stopped
     ports:

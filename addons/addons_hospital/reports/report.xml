@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <data>
+    
+        <record id="report_appointment_xls" model="ir.actions.report">
+            <field name="name">report_appointment_xls</field>
+            <field name="model">hospital.appointment</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">addons_hospital.report_appointment_xls</field>
+            <field name="report_file">addons_hospital.report_appointment_xls</field>
+            <field name="binding_model_id" ref="model_hospital_appointment"/>
+            <field name="binding_type">report</field>
+            <field name="attachment_use" eval="False"/>
+        </record>
+
+        <report
+            id="report_appointment_pdf"
+            model="hospital.appointment"
+            string="Appointment Report pdf"
+            report_type="qweb-pdf"
+            file="addons_hospital.report_appointment"
+            name="addons_hospital.template_appointment_pdf"
+        />
+
+    
+    </data>
+    
+</odoo>
