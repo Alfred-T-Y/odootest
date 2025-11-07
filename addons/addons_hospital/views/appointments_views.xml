@@ -34,18 +34,20 @@
                         <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,ongoing,done"/>
                     </header>
                     <sheet>
-                        <div class="row">
-                            <div class="col-6">
-                                <group>
-                                    <field name="reference" readonly="True"/>
-                                    <field name="patient_id"/>
-                                    <field name="date_appointment"/>
-                                </group>
-                            </div>
-                            <div class="col-6">
-                                <group>
-                                    <field name="note"/>
-                                </group>
+                        <div class="column">
+                            <h1>Reference : <field name="reference" readonly="True"/></h1>
+                            <div class="row mt-5">
+                                <div class="col-6">
+                                    <group>
+                                        <field name="patient_id"/>
+                                        <field name="date_appointment"/>
+                                    </group>
+                                </div>
+                                <div class="col-6">
+                                    <group>
+                                        <field name="note"/>
+                                    </group>
+                                </div>
                             </div>
                         </div>
                         <field name="appointment_line_ids" class="mt-5">

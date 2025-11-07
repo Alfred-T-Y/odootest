@@ -20,6 +20,7 @@
         "views/appointments_line_views.xml",
         "views/menu.xml",
         "reports/appointment_report_pdf.xml",
-        "reports/report.xml"
+        "reports/report.xml",
+        "reports/sale_report_inherit.xml"
     ]
 }
