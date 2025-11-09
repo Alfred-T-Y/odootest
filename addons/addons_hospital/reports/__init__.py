@@ -1,1 +1,1 @@
-from . import patient_card_xls
+from . import patient_card_xls, report_appointment_pdf
