@@ -10,9 +10,25 @@ class ReportAppointmentPdf(models.AbstractModel):
 
         model = 'hospital.appointment'
         docs = self.env[model].browse(docids)
+        data = []
+        for doc in docs:
+            patient = doc.mapped('patient_id')
+            tags_list = patient.mapped('tags_ids')
+            data.append({
+                'doc':doc, 
+                'tag':tags_list,
+            })
+       
+
+        
+
+        #lastpatient=patients.pop()
+        #beforelastpatient=patients.pop()
+
         return {
             'doc_ids': docids,
             'doc_model': model,
             'data': data,
-            'docs': docs,
+            #'beforelastpatient' : beforelastpatient,
+            #'lastpatient' : lastpatient,
         } 
