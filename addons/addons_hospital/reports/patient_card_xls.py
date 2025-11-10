@@ -3,9 +3,8 @@ from odoo import models
 class PatientCardXlsx(models.AbstractModel):
     _name = 'report.addons_hospital.report_appointment_xls'
     _inherit = 'report.report_xlsx.abstract'
-
+    
     def generate_xlsx_report(self, workbook, data, lines):
-        print("REPORT_XLS")
         #sheet = workbook.add_worksheet(report_name[:31])
         bold = workbook.add_format({'bold': True})
         #sheet.write(0, 0, obj.name, bold)

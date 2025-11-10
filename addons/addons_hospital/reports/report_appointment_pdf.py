@@ -7,10 +7,7 @@ class ReportAppointmentPdf(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
-        print("=== DEBUG REPORT ===")
-        print("DocIDs:", docids)
-        print("Context:", self.env.context)
-        print("Active ID:", self.env.context.get('active_id'))
+
         model = 'hospital.appointment'
         docs = self.env[model].browse(docids)
         return {
@@ -18,4 +15,4 @@ class ReportAppointmentPdf(models.AbstractModel):
             'doc_model': model,
             'data': data,
             'docs': docs,
-        }
+        } 

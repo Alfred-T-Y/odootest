@@ -3,7 +3,7 @@ from odoo import api, fields, models
 
 class HospitalAppointment(models.Model):
     _name = "hospital.appointment"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread','mail.activity.mixin']
     _description = "Hospital appointment"
     _rec_name = "patient_id" 
 
@@ -15,7 +15,7 @@ class HospitalAppointment(models.Model):
         ('draft','Draft'),('confirmed','Confirmed'),('ongoing','Ongoing'),
         ('done','Done'),('cancel','Cancelled')], default='draft', tracking=True)
     appointment_line_ids = fields.One2many(
-        'hospital.appointment.line', 'appointment_id', string='Lines')
+        'hospital.appointment.line', 'appointment_id', string='Lines', tracking=True)
     
     @api.model_create_multi
     def create(self, vals_list):

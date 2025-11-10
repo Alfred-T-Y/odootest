@@ -12,6 +12,25 @@
                         <h1>Appointment Report</h1>
                         <br/>
                         <p class="h2"><strong>Reference : </strong><text class="text-muted" t-field="doc.reference"/></p> 
+                        <br/>
+                        <br/>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr style="font-size: 1.5rem;">
+                                    <th class="text-start">Product</th>
+                                    <th class="text-start">Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-if="not doc.appointment_line_ids" class="pt-3 fs-5">
+                                    <td colspan="2" class="text-muted text-center">Aucun produit</td>
+                                </tr>
+                                <tr t-foreach="doc.appointment_line_ids" t-as="line" class="pt-3 fs-5">
+                                    <td class="pl-8 text-start"><span t-field="line.product_id"/></td>
+                                    <td class="text-start"><span t-field="line.qty"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </t>
             </t>

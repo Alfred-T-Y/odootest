@@ -37,7 +37,9 @@
                         </div>
                     </sheet>
                     <sheet class="mt-5">
-                        <div class="chatter_container">
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids"/>
+                            <field name="activity_ids"/>
                             <field name="message_ids"/>
                         </div>
                     </sheet>
