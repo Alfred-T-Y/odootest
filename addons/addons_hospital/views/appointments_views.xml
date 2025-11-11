@@ -31,10 +31,13 @@
                         <button name="action_cancel" type="object" string="Cancel" 
                         attrs="{'invisible': [('state', '=', 'done')]}"/>
 
+                        <button name="print_report_pdf" type="object" string="Print PDF" 
+                        class="oe_highlight"/>
+
                         <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,ongoing,done"/>
                     </header>
                     <sheet>
-                        <div class="column">
+                        <div>
                             <h1>Reference : <field name="reference" readonly="True"/></h1>
                             <div class="row mt-5">
                                 <div class="col-6">
@@ -50,12 +53,19 @@
                                 </div>
                             </div>
                         </div>
-                        <field name="appointment_line_ids" class="mt-5">
-                            <tree editable="top">
-                                <field name="product_id"/>
-                                <field name="qty"/>
-                            </tree>
-                        </field>
+                        <notebook>
+                            <page name="appointment_line_ids" string="Lines">
+                                <field name="appointment_line_ids" class="mt-5">
+                                    <tree editable="top">
+                                        <field name="product_id"/>
+                                        <field name="qty"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="other_infos" string="Infos">
+                                
+                            </page>
+                        </notebook>
                     </sheet>
                     <sheet class="mt-5">
                         <div class="oe_chatter">

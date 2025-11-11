@@ -18,17 +18,9 @@ class ReportAppointmentPdf(models.AbstractModel):
                 'doc':doc, 
                 'tag':tags_list,
             })
-       
-
-        
-
-        #lastpatient=patients.pop()
-        #beforelastpatient=patients.pop()
 
         return {
             'doc_ids': docids,
             'doc_model': model,
             'data': data,
-            #'beforelastpatient' : beforelastpatient,
-            #'lastpatient' : lastpatient,
         } 

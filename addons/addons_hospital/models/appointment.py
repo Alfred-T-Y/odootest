@@ -40,6 +40,9 @@ class HospitalAppointment(models.Model):
         for rec in self:
             rec.state = 'cancel'
 
+    def print_report_pdf(self):
+        return self.env.ref('addons_hospital.report_appointment_pdf').report_action(self)
+        
 
 class HospitalAppointmentLine(models.Model):
     _name = 'hospital.appointment.line'
